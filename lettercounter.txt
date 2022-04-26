@@ -1,0 +1,75 @@
+lettercounter.txt
+
+Analysis
+	I need to make a program that will count the number of occurances of a chosen letter in a sentence.
+
+Specs
+
+	input- sentence
+	input- chosen letter
+	output- number of occurances of letter
+
+Design
+	def main()
+	print("...msg introducing program")
+	prompt for a sentence, name input 'message'
+	prompt for a letter, name input 'letter'
+	total =sentence.count(chosen)
+	main()
+
+Code
+	#lettercounter.py
+	#This program reports the number of times a certain letter appears in a sentence.
+	#By Ashley Cook
+
+	def main():
+
+	    print("This program reports the number of times a chosen letter appears in a sentence.\n")
+	    #Prompt for sentence and letter
+	    sentence = input("Enter input sentence:" )
+	    chosen = input("Enter input letter:" )
+	    total = sentence.count(chosen)
+
+	 
+		print("Number occurrences of the letter", chosen , ":" , total)
+
+	main()
+
+Debugging
+	This code works, but I need it to report both uppercase and lowercase. I guessed I would need to include chosen.lower and chosen.upper, but
+	I had to try different things before it could work. First I tried:
+
+	upper = sentence.count(chosen.upper)
+    lower = sentence.count(chosen.lower)
+    total = (upper + lower)
+
+    This resulted in errors.
+
+    I also tried using length, len(sentence.count(chosen)) but that did not make sense. 
+
+    After messing around with the code and thinking about how the functions actually worked, I resulted in this:
+
+Final Code
+
+	#lettercounter.py
+	#This program reports the number of times a certain letter appears in a sentence.
+	#By Ashley Cook
+
+	def main():
+
+	    print("This program reports the number of times a chosen letter appears in a sentence.\n")
+	    #Prompt for sentence and letter
+	    sentence = input("Enter input sentence:" )
+	    chosen = input("Enter input letter:" )
+
+	 
+
+	    upper = sentence.lower().count(chosen)
+	    lower = sentence.upper().count(chosen)
+	    total = (upper + lower)
+	  
+	   
+
+	    print("Number occurrences of the letter", chosen , ":" , total)
+
+	main()
